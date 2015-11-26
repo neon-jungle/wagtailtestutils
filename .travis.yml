@@ -1,0 +1,20 @@
+language: python
+
+# Use container-based infrastructure
+sudo: false
+
+matrix:
+  include:
+   - env: TOXENV=py27-dj18
+   - env: TOXENV=py33-dj18
+   - env: TOXENV=py34-dj18
+   - env: TOXENV=py35-dj18
+     python: 3.5
+
+# Package installation
+install:
+  - pip install tox
+
+# Run the tests
+script:
+  tox
